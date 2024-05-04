@@ -34,11 +34,15 @@ const Login = () => {
         <div>
             {userLoggedIn && (<Navigate to={'/home'} replace={true} />)}
 
-            <main className="w-full h-screen flex self-center place-content-center place-items-center">
-                <div className="w-96 text-gray-600 space-y-5 p-4 shadow-xl border rounded-xl">
+            <main className="w-full h-screen flex self-center place-content-end place-items-center m-0">
+            <div class="h-screen w-screen flex justify-left items-left">
+                <div class="relative">
+                    <img src="https://images.pexels.com/photos/663487/pexels-photo-663487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Your Image" class="h-full w-full"/>
+            </div></div>
+                <div className="w-96 text-darkgray-600 space-y-5 p-4 shadow-2xl border rounded-xl mr-10 ml-10">
                     <div className="text-center">
                         <div className="mt-2">
-                            <h3 className="text-gray-800 text-xl font-semibold sm:text-2xl">Welcome Back</h3>
+                            <h3 className="text-darkgray-800 text-xl font-semibold sm:text-2xl">Welcome Back</h3>
                         </div>
                     </div>
                     <form
@@ -46,7 +50,7 @@ const Login = () => {
                         className="space-y-5"
                     >
                         <div>
-                            <label className="text-sm text-gray-600 font-bold">
+                            <label className="text-sm text-darkgray-600 font-bold">
                                 Email
                             </label>
                             <input
@@ -54,13 +58,13 @@ const Login = () => {
                                 autoComplete='email'
                                 required
                                 value={email} onChange={(e) => { setEmail(e.target.value) }}
-                                className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg transition duration-300"
+                                className="w-full mt-2 px-3 py-2 text-darkgray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg transition duration-300"
                             />
                         </div>
 
 
                         <div>
-                            <label className="text-sm text-gray-600 font-bold">
+                            <label className="text-sm text-darkgray-600 font-bold">
                                 Password
                             </label>
                             <input
@@ -68,7 +72,7 @@ const Login = () => {
                                 autoComplete='current-password'
                                 required
                                 value={password} onChange={(e) => { setPassword(e.target.value) }}
-                                className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg transition duration-300"
+                                className="w-full mt-2 px-3 py-2 text-darkgray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg transition duration-300"
                             />
                         </div>
 
@@ -79,7 +83,7 @@ const Login = () => {
                         <button
                             type="submit"
                             disabled={isSigningIn}
-                            className={`w-full px-4 py-2 text-white font-medium rounded-lg ${isSigningIn ? 'bg-gray-300 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-700 hover:shadow-xl transition duration-300'}`}
+                            className={`w-full px-4 py-2 text-white font-medium rounded-lg ${isSigningIn ? 'bg-gray-300 cursor-not-allowed' : 'bg-purple-600 hover:bg-purple-700 hover:shadow-xl transition duration-300'}`}
                         >
                             {isSigningIn ? 'Signing In...' : 'Sign In'}
                         </button>

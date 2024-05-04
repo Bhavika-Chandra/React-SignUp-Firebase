@@ -1,4 +1,7 @@
 body {
-    background: linear-gradient(to top, #d3ceff, #bfbafb, #7a7aa2);
+    background: linear-gradient(to top, #edb8b8, #cc96d7, #5e5786);
     aspect-ratio: 1 / 0.5;
 }
+.cursor-animation {
+    transition: transform 0.3s ease-out;
+  }

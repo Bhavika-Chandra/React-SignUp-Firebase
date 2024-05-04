@@ -7,6 +7,8 @@ const Register = () => {
 
     const navigate = useNavigate()
 
+    const [userName, setuserName] = useState('')
+    const [phoneNumber, setphoneNumber] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setconfirmPassword] = useState('')
@@ -28,10 +30,15 @@ const Register = () => {
             {userLoggedIn && (<Navigate to={'/home'} replace={true} />)}
 
             <main className="w-full h-screen flex self-center place-content-center place-items-center">
-                <div className="w-96 text-gray-600 space-y-5 p-4 shadow-xl border rounded-xl">
+            <div class="h-screen w-screen flex justify-right items-right">
+                <div class="relative">
+                    <img src="https://images.pexels.com/photos/3815111/pexels-photo-3815111.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Your Image" class="h-screen w-screen self-center"/>
+                </div>
+            </div>
+                <div className="w-96 h-screen text-darkgray-600 space-y-5 p-4 shadow-2xl border rounded-xl ml-5 mr-10">
                     <div className="text-center mb-6">
-                        <div className="mt-2">
-                            <h3 className="text-gray-800 text-xl font-semibold sm:text-2xl">Create a New Account</h3>
+                        <div className="mt-5">
+                            <h3 className="text-darkgray-800 text-xl font-semibold sm:text-2xl">Create a New Account</h3>
                         </div>
 
                     </div>
@@ -40,7 +47,35 @@ const Register = () => {
                         className="space-y-4"
                     >
                         <div>
-                            <label className="text-sm text-gray-600 font-bold">
+                            <label className="text-sm text-darkgray-600 font-bold">
+                                Name
+                            </label>
+                            <input
+                                disabled={isRegistering}
+                                type="userName"
+                                autoComplete='new-username'
+                                required
+                                value={userName} onChange={(e) => { setuserName(e.target.value) }}
+                                className="w-full mt-2 px-3 py-2 text-darkgray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg transition duration-300"
+                            />
+                        </div>
+
+                        <div>
+                            <label className="text-sm text-darkgray-600 font-bold">
+                                Phone Number
+                            </label>
+                            <input
+                                disabled={isRegistering}
+                                type="phoneNumber"
+                                autoComplete='new-number'
+                                required
+                                value={phoneNumber} onChange={(e) => { setphoneNumber(e.target.value) }}
+                                className="w-full mt-2 px-3 py-2 text-darkgray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg transition duration-300"
+                            />
+                        </div>
+
+                        <div>
+                            <label className="text-sm text-darkgray-600 font-bold">
                                 Email
                             </label>
                             <input
@@ -48,12 +83,12 @@ const Register = () => {
                                 autoComplete='email'
                                 required
                                 value={email} onChange={(e) => { setEmail(e.target.value) }}
-                                className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:indigo-600 shadow-sm rounded-lg transition duration-300"
+                                className="w-full mt-2 px-3 py-2 text-darkgray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg transition duration-300"
                             />
                         </div>
 
                         <div>
-                            <label className="text-sm text-gray-600 font-bold">
+                            <label className="text-sm text-darkgray-600 font-bold">
                                 Password
                             </label>
                             <input
@@ -62,12 +97,12 @@ const Register = () => {
                                 autoComplete='new-password'
                                 required
                                 value={password} onChange={(e) => { setPassword(e.target.value) }}
-                                className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg transition duration-300"
+                                className="w-full mt-2 px-3 py-2 text-darkgray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg transition duration-300"
                             />
                         </div>
 
                         <div>
-                            <label className="text-sm text-gray-600 font-bold">
+                            <label className="text-sm text-darkgray-600 font-bold">
                                 Confirm Password
                             </label>
                             <input
@@ -76,7 +111,7 @@ const Register = () => {
                                 autoComplete='off'
                                 required
                                 value={confirmPassword} onChange={(e) => { setconfirmPassword(e.target.value) }}
-                                className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg transition duration-300"
+                                className="w-full mt-2 px-3 py-2 text-darkgray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg transition duration-300"
                             />
                         </div>
 
@@ -87,7 +122,7 @@ const Register = () => {
                         <button
                             type="submit"
                             disabled={isRegistering}
-                            className={`w-full px-4 py-2 text-white font-medium rounded-lg ${isRegistering ? 'bg-gray-300 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-700 hover:shadow-xl transition duration-300'}`}
+                            className={`w-full px-4 py-2 text-white font-medium rounded-lg ${isRegistering ? 'bg-gray-300 cursor-not-allowed' : 'bg-purple-600 hover:bg-purple-700 hover:shadow-xl transition duration-300'}`}
                         >
                             {isRegistering ? 'Signing Up...' : 'Sign Up'}
                         </button>

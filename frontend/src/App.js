@@ -4,6 +4,7 @@ import Register from "./components/auth/register";
 import Header from "./components/header";
 import Home from "./components/home";
 import './components/style.css';
+import './components/qrcodegenerator';
 
 import { AuthProvider } from "./context/auth_context";
 import { useRoutes } from "react-router-dom";
